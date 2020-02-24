@@ -1,12 +1,38 @@
 import React, { Component } from "react";
 
 class TransactionForm extends Component {
-  state = {
+  /* state = {
     benAcctNo: "",
     iFSCode: "",
     benName: "",
     amount: ""
+  }; */
+  //replace the previous state with the below and use spread function
+  state = {
+    ...this.EditStateFunction()
   };
+  //EditStateFunction in relation to transactionForm in trans-list page, change the state structure
+  EditStateFunction() {
+    if (this.props.currentIndex === -1)
+      return {
+        benAcctNo: "",
+        iFSCode: "",
+        benName: "",
+        amount: ""
+      };
+    else return this.props.list[this.props.currentIndex];
+  }
+  //to update elements if there is only changes in the input fields
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.currentIndex != this.props.currentIndex ||
+      prevProps.list.length != this.props.list.length
+    )
+      this.setState({
+        ...this.EditStateFunction()
+      });
+  }
+
   //handle function for each input content
   handleInputChange = e => {
     this.setState({

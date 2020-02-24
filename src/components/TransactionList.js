@@ -4,7 +4,8 @@ import TransactionForm from "./TransactionForm";
 class TransactionList extends Component {
   state = {
     //list: []
-    list: this.returnList()
+    list: this.returnList(),
+    currentIndex: -1
   };
   //addOrEdit function from transactionList
   handleSubmit = e => {
@@ -20,15 +21,27 @@ class TransactionList extends Component {
   //function on add & edit linked to transactionForm
   onAddOrEdit = data => {
     let list = this.returnList();
-    list.push(data);
-    localStorage.setItem("transactions", JSON.stringify(list));
+    if (this.state.currentIndex === -1) list.push(data);
+    //to make the update func work
+    else list[this.state.currentIndex] = data;
+    localStorage.setItem("transactions", JSON.stringify(list)); //to make the update func work
     this.setState({ list: list });
+  };
+  //handle edit function
+  handleEdit = a => {
+    this.setState({
+      currentIndex: a
+    });
   };
 
   render() {
     return (
       <div>
-        <TransactionForm onAddOrEdit={this.onAddOrEdit} />
+        <TransactionForm
+          onAddOrEdit={this.onAddOrEdit}
+          currentIndex={this.state.currentIndex} //for edit purpose
+          list={this.state.list} //for edit purpose to be exported to form
+        />
         <hr />
         <p>List of Transactions:</p>
         <table>
@@ -40,6 +53,9 @@ class TransactionList extends Component {
                   <td>{item.iFSCode}</td>
                   <td>{item.benName}</td>
                   <td>{item.amount}</td>
+                  <td>
+                    <button onClick={() => this.handleEdit(a)}>Edit</button>
+                  </td>
                 </tr>
               );
             })}
