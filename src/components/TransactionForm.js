@@ -47,9 +47,10 @@ class TransactionForm extends Component {
   render() {
     return (
       <div>
-        <h3>TransactionForm</h3>
-        <form onSubmit={this.handleSubmit} autoComplete="off">
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="form">
+          <h2>Order Form:</h2>
           <input
+            className="input"
             name="benAcctNo"
             placeholder="benAcctNo"
             value={this.state.benAcctNo}
@@ -58,6 +59,7 @@ class TransactionForm extends Component {
           <br />
           {/*  */}
           <input
+            className="input"
             name="iFSCode"
             placeholder="iFSCode"
             value={this.state.iFSCode}
@@ -66,6 +68,7 @@ class TransactionForm extends Component {
           <br />
           {/*  */}
           <input
+            className="input"
             name="benName"
             placeholder="benName"
             value={this.state.benName}
@@ -74,6 +77,7 @@ class TransactionForm extends Component {
           <br />
           {/*  */}
           <input
+            className="input"
             name="amount"
             placeholder="amount"
             value={this.state.amount}
@@ -81,7 +85,9 @@ class TransactionForm extends Component {
           />{" "}
           <br />
           {/*  */}
-          <button type="submit">Submit</button>
+          <button type="submit" className="submit">
+            Submit
+          </button>
         </form>
       </div>
     );

@@ -56,7 +56,6 @@ class TransactionList extends Component {
           list={this.state.list} //for edit purpose to be exported to form
         />
         <hr />
-        <p>List of Transactions:</p>
         <table>
           <tbody>
             {this.state.list.map((item, a) => {
