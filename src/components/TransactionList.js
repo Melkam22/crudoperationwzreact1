@@ -60,14 +60,21 @@ class TransactionList extends Component {
           <tbody>
             {this.state.list.map((item, a) => {
               return (
-                <tr key={a}>
-                  <td>{item.benAcctNo}</td>
-                  <td>{item.iFSCode}</td>
-                  <td>{item.benName}</td>
-                  <td>{item.amount}</td>
+                <tr key={a} className="frame">
+                  <td className="one">{item.benAcctNo}</td>
+                  <td className="two">{item.iFSCode}</td>
+                  <td className="three">{item.benName}</td>
+                  <td className="four">{item.amount}</td>
                   <td>
-                    <button onClick={() => this.handleEdit(a)}>Edit</button>
-                    <button onClick={() => this.handleDelete(a)}>Delete</button>
+                    <button className="edit" onClick={() => this.handleEdit(a)}>
+                      Edit
+                    </button>
+                    <button
+                      className="dlt"
+                      onClick={() => this.handleDelete(a)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );

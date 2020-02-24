@@ -27,3 +27,39 @@
   font-size: 20px;
   width: 220px;
 }
+/* from transactionList */
+.edit {
+  background: skyblue;
+  border: none;
+  margin-left: 5px;
+  width: 80px;
+  height: 30px;
+}
+.dlt {
+  background: red;
+  border: none;
+  margin-left: 5px;
+  width: 80px;
+  height: 30px;
+}
+.one {
+  margin-left: 100px;
+  border-bottom: 1px solid blue;
+  border-right: 1px solid blue;
+  width: 110px;
+}
+.two {
+  border-bottom: 1px solid blue;
+  border-right: 1px solid blue;
+  width: 80px;
+}
+.three {
+  border-bottom: 1px solid blue;
+  border-right: 1px solid blue;
+  width: 80px;
+}
+.four {
+  border-bottom: 1px solid blue;
+  border-right: 1px solid blue;
+  width: 80px;
+}
