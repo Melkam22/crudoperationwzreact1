@@ -31,6 +31,20 @@ class TransactionList extends Component {
         <TransactionForm onAddOrEdit={this.onAddOrEdit} />
         <hr />
         <p>List of Transactions:</p>
+        <table>
+          <tbody>
+            {this.state.list.map((item, a) => {
+              return (
+                <tr key={a}>
+                  <td>{item.benAcctNo}</td>
+                  <td>{item.iFSCode}</td>
+                  <td>{item.benName}</td>
+                  <td>{item.amount}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }
