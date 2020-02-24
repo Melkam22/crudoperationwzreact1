@@ -25,12 +25,25 @@ class TransactionList extends Component {
     //to make the update func work
     else list[this.state.currentIndex] = data;
     localStorage.setItem("transactions", JSON.stringify(list)); //to make the update func work
-    this.setState({ list: list });
+    this.setState({
+      list: list,
+      currentIndex: -1 //after submit to return the placeholders
+    });
   };
   //handle edit function
   handleEdit = a => {
     this.setState({
       currentIndex: a
+    });
+  };
+  //handle delete function
+  handleDelete = a => {
+    let list = this.returnList();
+    list.splice(a, 1);
+    localStorage.setItem("transactions", JSON.stringify(list)); //to make the update func work
+    this.setState({
+      list: list,
+      currentIndex: -1 //after submit to return the placeholders
     });
   };
 
@@ -55,6 +68,7 @@ class TransactionList extends Component {
                   <td>{item.amount}</td>
                   <td>
                     <button onClick={() => this.handleEdit(a)}>Edit</button>
+                    <button onClick={() => this.handleDelete(a)}>Delete</button>
                   </td>
                 </tr>
               );
