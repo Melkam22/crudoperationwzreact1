@@ -52,7 +52,7 @@ class TransactionForm extends Component {
           <input
             className="input"
             name="benAcctNo"
-            placeholder="benAcctNo"
+            placeholder="Account Number"
             value={this.state.benAcctNo}
             onChange={this.handleInputChange}
           />{" "}
@@ -70,7 +70,7 @@ class TransactionForm extends Component {
           <input
             className="input"
             name="benName"
-            placeholder="benName"
+            placeholder="Clients Name"
             value={this.state.benName}
             onChange={this.handleInputChange}
           />{" "}
@@ -79,7 +79,7 @@ class TransactionForm extends Component {
           <input
             className="input"
             name="amount"
-            placeholder="amount"
+            placeholder="Amount"
             value={this.state.amount}
             onChange={this.handleInputChange}
           />{" "}
