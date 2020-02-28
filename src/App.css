@@ -63,3 +63,7 @@
   border-right: 1px solid blue;
   width: 80px;
 }
+/* result render part */
+.frame{
+  margin-left: 10%;
+}

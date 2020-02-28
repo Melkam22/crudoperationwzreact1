@@ -56,11 +56,11 @@ class TransactionList extends Component {
           list={this.state.list} //for edit purpose to be exported to form
         />
         <hr />
-        <table>
+        <table className="frame">
           <tbody>
             {this.state.list.map((item, a) => {
               return (
-                <tr key={a} className="frame">
+                <tr key={a}>
                   <td className="one">{item.benAcctNo}</td>
                   <td className="two">{item.iFSCode}</td>
                   <td className="three">{item.benName}</td>
